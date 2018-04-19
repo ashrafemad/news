@@ -77,13 +77,25 @@ WSGI_APPLICATION = 'news_root.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/2.0/ref/settings/#databases
 
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'news',
+#         'USER': 'ashraf',
+#         'PASSWORD': '689602',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#     }
+# }
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'news',
-        'USER': 'ashraf',
-        'PASSWORD': '689602',
-        'HOST': 'localhost',
+        'NAME': 'da8ocd7nur604j',
+        'USER': 'ueirwhfnuuikgv',
+        'PASSWORD': '2cf62c36d445f3cb4da0bf9ed0ad7adf43553a8714c60010bafaf1062bd47cb6',
+        'HOST': 'ec2-50-16-196-238.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
@@ -126,6 +138,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
 LOGIN_REDIRECT_URL = '/entries'
 LOGIN_URL = '/login'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
