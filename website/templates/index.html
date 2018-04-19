@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% for new in object_list %}
+			<article style="align-items: center;" class="col-lg-3 col-md-3 col-sm-3 col-xs-12 col-xxs-12 animate-box">
+				<figure>
+					<a href="{{new.slug}}"><img src="{{new.image.thumbnail.url}}" alt="{{new.slug}}" style="margin: 0 auto;" class="img-responsive"></a>
+				</figure>
+				<span class="fh5co-meta"><a href="{{new.slug}}">{{new.category}}</a></span>
+	{% if request.session.lang == "ro" %}
+				<h4 class="fh5co-article-title"><a style="color:black" href="{{new.slug}}">{{new.title_rom}}</a></h4>
+{% else %}
+				<h4 class="fh5co-article-title"><a style="color:black" href="{{new.slug}}">{{new.title}}</a></h4>
+{% endif %}
+				<span class="fh5co-meta fh5co-date">{{new.date}}</span>
+			</article>
+			{% endfor %}
+{% endblock %}

@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block content %}
+<a href="{% if prev.slug != '' %} {% url 'new-detail' prev.slug %} {% else %} 12 {% endif %}" class="fh5co-post-prev"><span><i class="icon-chevron-left"></i> Prev</span></a>
+
+
+	<a href="{% if next.slug != '' %} {% url 'new-detail' next.slug %} {% else %} 12 {% endif %}" class="fh5co-post-next"><span>Next <i class="icon-chevron-right"></i></span></a>
+
+
+
+
+	<div class="container-fluid">
+		<div class="row fh5co-post-entry single-entry">
+			<article class="col-lg-8 col-lg-offset-2 col-md-8 col-md-offset-2 col-sm-8 col-sm-offset-2 col-xs-12 col-xs-offset-0">
+				<figure class="animate-box">
+					<img src="{{object.image.url}}" alt="{{object.slug}}" style="margin: 0 auto;" class="img-responsive">
+				</figure>
+				<span class="fh5co-meta animate-box"><a href="#">{{object.category}}</a></span>
+
+				{% if request.session.lang == 'ro' %}
+				<h2 class="fh5co-article-title animate-box"><a href="#">{{object.title}}</a></h2>
+				{% else %}
+				<h2 class="fh5co-article-title animate-box"><a href="#">{{object.title}}</a></h2>
+				{% endif %}
+				<span class="fh5co-meta fh5co-date animate-box">{{object.date}}</span>
+
+
+				<div class="col-lg-12 col-lg-offset-0 col-md-12 col-md-offset-0 col-sm-12 col-sm-offset-0 col-xs-12 col-xs-offset-0 text-left content-article">
+					<div class="row">
+						<audio controls>
+						<source src="
+							{% if request.session.lang == 'ro' %}
+							{{object.audio_rom}}
+							{% else %}
+							{{object.audio}}
+							{% endif %}" type="audio/mpeg">
+						</audio>
+						<div id="content" class="col-lg-12 cp-r animate-box">
+							{% if request.session.lang == 'ro' %}
+							{{object.content_rom|safe}}
+							{% else %}
+							{{object.content|safe}}
+							{% endif %}
+						</div>
+					</div>
+
+
+
+
+
+				</div>
+			</article>
+		</div>
+	</div>
+{% endblock %}
