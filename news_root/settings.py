@@ -143,5 +143,5 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/entries'
 LOGIN_URL = '/login'
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'app/media')
+MEDIA_URL = 'app/media/'
