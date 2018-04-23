@@ -88,17 +88,28 @@ WSGI_APPLICATION = 'news_root.wsgi.application'
 #     }
 # }
 
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'da8ocd7nur604j',
-        'USER': 'ueirwhfnuuikgv',
-        'PASSWORD': '2cf62c36d445f3cb4da0bf9ed0ad7adf43553a8714c60010bafaf1062bd47cb6',
-        'HOST': 'ec2-50-16-196-238.compute-1.amazonaws.com',
-        'PORT': '5432',
-    }
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'news',
+        'USER': 'root',
+        'PASSWORD': '',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    },
+            'OPTIONS': {'charset': 'utf8mb4'},
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME': 'da8ocd7nur604j',
+#         'USER': 'ueirwhfnuuikgv',
+#         'PASSWORD': '2cf62c36d445f3cb4da0bf9ed0ad7adf43553a8714c60010bafaf1062bd47cb6',
+#         'HOST': 'ec2-50-16-196-238.compute-1.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 # Password validation

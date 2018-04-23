@@ -39,7 +39,7 @@ class New(models.Model):
             self.slug = slugify(self.title)
         tts = gTTS(text=self.content, lang='ru')
         tts_rom = gTTS(text=self.content_rom, lang='ro')
-        tts.save(settings.MEDIA_URL + self.slug + '.mp3')
+        tts.save(settings.MEDIA_ROOT + '/' + self.slug + '.mp3')
         tts_rom.save(settings.MEDIA_ROOT + '/' + self.slug + '_rom.mp3')
         self.audio = settings.MEDIA_URL + self.slug + '.mp3'
         self.audio_rom = settings.MEDIA_URL  + self.slug + '_rom.mp3'
